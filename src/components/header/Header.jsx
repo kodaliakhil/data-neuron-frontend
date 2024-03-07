@@ -3,37 +3,45 @@ import { add, update } from "../../services/Service";
 
 const Header = () => {
   const [apidata, setApiData] = useState();
-  const [newDescription, setNewDescription] = useState("");
+  const [entry, setEntry] = useState("");
   const [addCount, setAddCount] = useState(0);
   const [updateCount, setUpdateCount] = useState(0);
   function onAdd() {
-    add({ entry: newDescription, addCount, updateCount })
+    add({ entry, addCount, updateCount })
       .then((res) => res.json())
       .then((data) => {
         setAddCount(data.addCount);
         setApiData(data);
       });
-    setNewDescription("");
+    setEntry("");
   }
 
   function onUpdate() {
-    update({ _id: apidata._id, entry: newDescription, addCount, updateCount })
+    update({ _id: apidata._id, entry, addCount, updateCount })
       .then((res) => res.json())
       .then((data) => setUpdateCount(data.updateCount));
   }
   return (
-    <header className=" bg-dark p-2 shadow-lg d-flex flex-row justify-content-center align-items-center sticky-top">
+    <header className=" bg-dark p-2 shadow-lg d-flex flex-row justify-content-end align-items-center sticky-top">
       <input
         type="text"
         className="p-2"
-        placeholder="Add/Update Description"
-        onChange={(e) => setNewDescription(e.target.value)}
-        value={newDescription}
+        placeholder="Add/Update "
+        onChange={(e) => setEntry(e.target.value)}
+        value={entry}
       />
-      <button className="btn btn-light shadow p-2 m-2" onClick={onAdd}>
+      <button
+        className="btn btn-success shadow p-2 m-2"
+        onClick={onAdd}
+        style={{ width: "100px" }}
+      >
         Add
       </button>
-      <button className="btn btn-light shadow p-2 m-2" onClick={onUpdate}>
+      <button
+        className="btn btn-primary shadow p-2 m-2"
+        onClick={onUpdate}
+        style={{ width: "100px" }}
+      >
         Update
       </button>
 

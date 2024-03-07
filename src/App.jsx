@@ -1,9 +1,7 @@
-import { useState } from "react";
-
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/header/Header";
-import ResizableContainer from "./components/resizableContainer/ResizableContainer";
+import { Resizable } from "re-resizable";
 
 function App() {
   return (
@@ -13,9 +11,9 @@ function App() {
         style={{ overflow: "hidden" }}
         className="p-5 d-flex flex-row flex-wrap"
       >
-        <ResizableContainer
+        <Resizable
           id={"item1"}
-          className="m-3 flex-grow-1 shadow-lg bg-secondary"
+          className="m-3 flex-grow-1 shadow-lg "
           defaultSize={{
             width: Math.floor(parseInt(window.innerWidth) / 2) - 200,
             height: 300,
@@ -24,69 +22,66 @@ function App() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            border: "solid 1px #ddd",
+            border: "solid 3px black",
             background: "#f0f0f0",
           }}
         >
-          <div className="d-flex flex-column align-items-center bg-secondary container-card p-5">
+          <div className="d-flex flex-column align-items-center  container-card ">
             <img
-              alt="neuron"
-              className="image1"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaSbmLkVlC-LbDJuspssq8bc3nigBD_FSlEwMiWAn-LEO6L0tSgo0QV6zVcF4GYjMaDjg&usqp=CAU"
+              alt="laptop"
+              className="image"
+              src="https://images.pexels.com/photos/193350/pexels-photo-193350.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             />
-            {/* <p className="text-light my-2 ">{data?.description}</p> */}
           </div>
-        </ResizableContainer>
+        </Resizable>
 
-        <ResizableContainer
+        <Resizable
           id={"item2"}
-          className="m-3 flex-grow-1 shadow bg-secondary"
+          className="m-3 flex-grow-1 shadow "
           defaultSize={{
             width: Math.floor(window.innerWidth / 2) - 200,
-             height: 300,
+            height: 300,
           }}
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            border: "solid 1px #ddd",
+            border: "solid 3px black",
             background: "#f0f0f0",
           }}
         >
-          <div className="d-flex flex-column align-items-center bg-secondary container-card p-5">
+          <div className="d-flex flex-column align-items-center  container-card ">
             <img
               alt="neuron"
-              className="image1"
-              src="https://www.ibm.com/blog/wp-content/uploads/2023/03/What-is-Generative-AI-what-are-Foundation-Models-and-why-do-they-matter-scaled.jpg"
+              className="image"
+              src="https://images.pexels.com/photos/17485657/pexels-photo-17485657/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-depicts-how-ai-could-adapt-to-an-infinite-amount-of-uses-it-was-created-by-nidia-dias-as-part-of-the-visualising-ai-pr.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             />
-            {/* <p className="text-light my-2 ">{data?.description}</p> */}
           </div>
-        </ResizableContainer>
+        </Resizable>
 
-        <ResizableContainer
+        <Resizable
           id={"item3"}
           className="m-3 flex-grow-1 bg-light shadow"
           defaultSize={{
             width: window.innerWidth - 200,
-             height: 300,
+            height: 300,
           }}
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            border: "solid 1px #ddd",
+            border: "solid 3px black",
             background: "#f0f0f0",
           }}
         >
-          <div className="d-flex flex-column align-items-center bg-secondary container-card p-5">
+          <div className="d-flex flex-column align-items-center  container-card ">
             <img
               alt="neuron"
-              className="image1"
-              src="https://cdn.sanity.io/images/tlr8oxjg/production/afce27d5dcb021422c709cb5bf60cb3a33f7376d-1456x816.png"
+              className="image"
+              src="https://images.pexels.com/photos/681335/pexels-photo-681335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             />
-            {/* <p className="text-light my-2 ">{data?.description}</p> */}
           </div>
-        </ResizableContainer>
+        </Resizable>
       </div>
     </>
   );
